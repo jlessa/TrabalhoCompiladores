@@ -5,11 +5,13 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
  */
-public class AssignStmt   implements  Statement {
+public class AssignStmt   extends NodeP implements  Statement {
 
     private Identifier id;
     private Expression assign;
@@ -17,6 +19,9 @@ public class AssignStmt   implements  Statement {
     public AssignStmt(Identifier id, Expression assign) {
         this.id = id;
         this.assign = assign;
+        filhos = new ArrayList<>();        
+        filhos.add(this.id);        
+        filhos.add(this.assign);
     }
 
     public Identifier getId() {

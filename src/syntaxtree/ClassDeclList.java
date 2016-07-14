@@ -12,12 +12,17 @@ import java.util.List;
  *
  * @author Jefferson
  */
-public class ClassDeclList implements Node {
+public class ClassDeclList extends NodeP implements Node {
 
     private List<ClassDecl> classes;
 
     public ClassDeclList() {
         this.classes = new ArrayList<>();
+        filhos = new ArrayList<>();
+        for(ClassDecl cd : classes){
+            filhos.add(cd);
+        }
+        
     }
 
     public void add(ClassDecl c) {

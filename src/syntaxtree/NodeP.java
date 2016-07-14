@@ -5,12 +5,17 @@
  */
 package syntaxtree;
 
+import java.util.List;
+
 /**
  *
- * @author Jefferson
+ * @author jefferson.lessa
  */
-public class ClassDecl extends NodeP implements Node {
+public abstract class NodeP {
+    List<Node> filhos; 
+    String value;
 
-
-    
+    public NodeP() {
+        this.value = this.getClass().getSimpleName();
+    }
 }

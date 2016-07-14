@@ -5,11 +5,13 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
  */
-public class BinaryIntegerExpr   implements  Expression {
+public class BinaryIntegerExpr extends NodeP implements  Expression {
     private Expression expr1;
     private Expression expr2;
     private BinaryIntegerOperation op;
@@ -18,6 +20,10 @@ public class BinaryIntegerExpr   implements  Expression {
         this.expr1 = expr1;
         this.expr2 = expr2;
         this.op = op;     
+        filhos = new ArrayList<>();
+        filhos.add(expr1);
+        filhos.add(expr2);
+        filhos.add(new Terminal(this.op.toString()));
     }
   
     public enum BinaryIntegerOperation {

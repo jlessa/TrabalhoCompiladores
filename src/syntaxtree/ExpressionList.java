@@ -12,11 +12,15 @@ import java.util.List;
  *
  * @author Jefferson
  */
-public class ExpressionList implements Node {
+public class ExpressionList extends NodeP implements Node {
     private List<Expression> expressions;
 
     public ExpressionList() {
         this.expressions = new ArrayList<>();
+        filhos = new ArrayList<>();
+        for(Expression ex : this.expressions){
+            filhos.add(ex);
+        }
     }
 
     public void add(Expression e) {

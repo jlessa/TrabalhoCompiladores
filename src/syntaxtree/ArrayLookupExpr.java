@@ -5,18 +5,24 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
  */
-public class ArrayLookupExpr implements Expression {
+public class ArrayLookupExpr extends NodeP implements Expression {
     private Expression array;
     private Expression index;
 
     public ArrayLookupExpr(Expression array, Expression index) {
         this.array = array;
         this.index = index;
-
+        
+        filhos = new ArrayList<>();        
+        filhos.add(this.array);
+        filhos.add(this.index);
+        
     }
 
     public Expression getArray() {

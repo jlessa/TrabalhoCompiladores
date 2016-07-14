@@ -5,11 +5,13 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
  */
-public class MainClassDecl implements Node {
+public class MainClassDecl extends NodeP implements Node {
     private Identifier mainClassName;
     private Identifier argsName;
     private StatementList cmd;
@@ -17,7 +19,11 @@ public class MainClassDecl implements Node {
     public MainClassDecl(Identifier mainClassName, Identifier argsName, StatementList cmd) {
         this.mainClassName = mainClassName;
         this.argsName = argsName;
-        this.cmd = cmd;        
+        this.cmd = cmd;  
+        filhos = new ArrayList<>();
+        filhos.add(mainClassName);
+        filhos.add(argsName);
+        filhos.add(cmd);
     }
 
     public Identifier getMainClassName() {

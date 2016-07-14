@@ -5,11 +5,13 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
  */
-public class Argument implements Node {
+public class Argument extends NodeP implements Node {
 
     private Type type;
     private Identifier name;
@@ -17,6 +19,9 @@ public class Argument implements Node {
     public Argument(Type type, Identifier name) {
         this.type = type;
         this.name = name;
+        filhos = new ArrayList<>();
+        filhos.add(this.type);
+        filhos.add(this.name);
     }
 
     public Type getType() {

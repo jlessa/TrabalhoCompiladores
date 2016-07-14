@@ -12,12 +12,16 @@ import java.util.List;
  *
  * @author Jefferson
  */
-public class ArgumentList implements Node{
+public class ArgumentList extends NodeP implements Node{
 
     private List<Argument> arguments;
 
     public ArgumentList() {
         this.arguments = new ArrayList<>();        
+        filhos = new ArrayList<>();
+        for(Argument ag : this.arguments){
+            filhos.add(ag);
+        }
     }
 
     public void add(Argument a) {

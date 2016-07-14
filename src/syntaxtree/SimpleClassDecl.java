@@ -5,6 +5,8 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
@@ -19,6 +21,11 @@ public class SimpleClassDecl extends ClassDecl{
         this.className = className;
         this.attributes = attributes;
         this.methods = methods;
+        this.filhos = new ArrayList<>();
+        filhos.add(this.className);
+        filhos.add(this.attributes);
+        filhos.add(this.methods);
+        
     }
 
     public Identifier getClassName() {

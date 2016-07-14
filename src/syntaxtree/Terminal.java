@@ -7,10 +7,13 @@ package syntaxtree;
 
 /**
  *
- * @author Jefferson
+ * @author jefferson.lessa
  */
-public class ClassDecl extends NodeP implements Node {
-
-
+public class Terminal extends NodeP implements Node{
     
+    public Terminal(String value){
+        this.filhos = null;
+        this.value = value;
+    }
+                    
 }

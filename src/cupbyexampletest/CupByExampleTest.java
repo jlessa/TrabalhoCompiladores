@@ -52,7 +52,7 @@ public class CupByExampleTest {
         //Árvore na memória
         Node node = (Node)p.parse().value;
         
-        BTreePrinter.printNode(node);
+        //BTreePrinter.printNode(node);
 
     }
 

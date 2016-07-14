@@ -9,12 +9,13 @@ package syntaxtree;
  *
  * @author Jefferson
  */
-public class Identifier implements Node{
+public class Identifier extends NodeP implements Node{
 
     private String name;
 
     public Identifier(String name) {
         this.name = name;
+        filhos = null;
     }
 
     public String getName() {
