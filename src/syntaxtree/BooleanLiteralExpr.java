@@ -7,22 +7,24 @@ package syntaxtree;
 
 import java.util.ArrayList;
 
+
 /**
  *
  * @author Jefferson
  */
 public class BooleanLiteralExpr extends NodeP implements Expression {
+
     private boolean value;
 
     public BooleanLiteralExpr(boolean value) {
         this.value = value;
         filhos = new ArrayList<>();
-        filhos.add(new Terminal(value ? "true" : "false"));  
+        filhos.add(new Terminal(value ? "true" : "false"));
     }
+
 
     public boolean isValue() {
         return value;
     }
-    
-    
+
 }

@@ -17,12 +17,12 @@ public class BlockStmt extends NodeP implements Statement {
 
     public BlockStmt(StatementList stmts) {
         this.stmts = stmts;
-        
+
         filhos = new ArrayList<>();
         filhos.add(stmts);
-        
-        
+
     }
+
 
     public StatementList getStmts() {
         return stmts;

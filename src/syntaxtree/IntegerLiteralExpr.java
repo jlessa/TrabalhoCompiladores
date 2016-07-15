@@ -5,22 +5,26 @@
  */
 package syntaxtree;
 
+
+
 /**
  *
  * @author Jefferson
  */
-public class IntegerLiteralExpr   implements  Expression {
+public class IntegerLiteralExpr extends NodeP implements Expression {
+
     private int value;
 
     public IntegerLiteralExpr(int value) {
         this.value = value;
-        
+        filhos = null;
+        this.valor = Integer.toString(this.value);
     }
 
     public int getValue() {
         return value;
     }
 
-    
-    
+
+
 }

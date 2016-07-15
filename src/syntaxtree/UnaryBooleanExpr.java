@@ -5,20 +5,25 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
  */
-public class UnaryBooleanExpr implements Expression {
+public class UnaryBooleanExpr extends NodeP implements Expression {
+
     private Expression expr;
     private UnaryBooleanOperation op;
 
     public UnaryBooleanExpr(Expression expr, UnaryBooleanOperation op) {
         this.expr = expr;
         this.op = op;
-     
+        filhos = new ArrayList<>();
+        filhos.add(expr);
+        filhos.add(new Terminal(op.toString()));
     }
-    
+
 
     public enum UnaryBooleanOperation {
         OPPOSITE
@@ -32,5 +37,4 @@ public class UnaryBooleanExpr implements Expression {
         return op;
     }
 
-    
 }

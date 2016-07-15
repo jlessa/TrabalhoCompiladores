@@ -5,11 +5,14 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author Jefferson
  */
-public class MethodDecl implements Node {
+public class MethodDecl extends NodeP implements Node {
 
     private Type returnType;
     private Identifier name;
@@ -24,8 +27,16 @@ public class MethodDecl implements Node {
         this.arguments = arguments;
         this.variables = variables;
         this.statements = statements;
-        this.returnExpr = returnExpr;        
+        this.returnExpr = returnExpr;
+        filhos = new ArrayList<>();
+        filhos.add(this.name);
+        filhos.add(this.returnType);
+        filhos.add(this.arguments);
+        filhos.add(this.variables);
+        filhos.add(this.statements);
+        filhos.add(this.returnExpr);
     }
+
 
     public Type getReturnType() {
         return returnType;
@@ -50,5 +61,5 @@ public class MethodDecl implements Node {
     public Expression getReturnExpr() {
         return returnExpr;
     }
-    
+
 }

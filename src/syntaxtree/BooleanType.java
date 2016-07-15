@@ -5,10 +5,13 @@
  */
 package syntaxtree;
 
+
 /**
  *
  * @author Jefferson
  */
 public class BooleanType   implements Type{    
+
+
 
 }

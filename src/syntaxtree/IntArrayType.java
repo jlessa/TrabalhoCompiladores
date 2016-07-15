@@ -5,11 +5,13 @@
  */
 package syntaxtree;
 
+
+
 /**
  *
  * @author Jefferson
  */
-public class IntArrayType   implements Type {
+public class IntArrayType extends NodeP implements Type {
 
 
 }

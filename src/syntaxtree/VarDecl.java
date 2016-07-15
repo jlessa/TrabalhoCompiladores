@@ -5,11 +5,13 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
  */
-public class VarDecl implements Node{
+public class VarDecl extends NodeP implements Node {
 
     private Type type;
     private Identifier id;
@@ -17,8 +19,12 @@ public class VarDecl implements Node{
     public VarDecl(Type type, Identifier id) {
         this.type = type;
         this.id = id;
-        
+        filhos = new ArrayList<>();
+        filhos.add(this.type);
+        filhos.add(this.id);
+
     }
+
 
     public Type getType() {
         return type;

@@ -8,23 +8,29 @@ package syntaxtree;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  *
  * @author Jefferson
  */
 public class ExpressionList extends NodeP implements Node {
+
     private List<Expression> expressions;
 
     public ExpressionList() {
         this.expressions = new ArrayList<>();
         filhos = new ArrayList<>();
-        for(Expression ex : this.expressions){
-            filhos.add(ex);
-        }
+
     }
+
+
 
     public void add(Expression e) {
         this.expressions.add(e);
+    }
+
+    public void addFilho(Expression e) {
+        this.filhos.add(e);
     }
 
     public Expression get(int i) {
@@ -34,6 +40,5 @@ public class ExpressionList extends NodeP implements Node {
     public int size() {
         return this.expressions.size();
     }
-   
-    
+
 }

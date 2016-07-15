@@ -12,10 +12,11 @@ import java.util.List;
  * @author jefferson.lessa
  */
 public abstract class NodeP {
-    List<Node> filhos; 
-    String value;
+    public List<Node> filhos; 
+    public String valor;
+    public boolean visitado;
 
     public NodeP() {
-        this.value = this.getClass().getSimpleName();
+        this.valor = this.getClass().getSimpleName();
     }
 }

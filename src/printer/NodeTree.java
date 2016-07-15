@@ -5,15 +5,13 @@
  */
 package printer;
 
-import java.util.List;
-import static javafx.scene.input.KeyCode.T;
+import syntaxtree.NodeP;
+import syntaxtree.Node;
 
 /**
  *
- * @author Jefferson
+ * @author jefferson.lessa
  */
-public class NodeTree {
-    Object valor = false;
-    boolean visitado;
-    List <NodeTree> filhos;        
+public class NodeTree extends NodeP implements Node {
+
 }

@@ -5,12 +5,16 @@
  */
 package syntaxtree;
 
+
 /**
  *
  * @author Jefferson
  */
-public class IntegerType implements Type{
+public class IntegerType extends NodeP implements Type {
 
- 
-    
+    public IntegerType() {
+        this.filhos = null;
+        this.valor = "int";
+    }
+
 }

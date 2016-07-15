@@ -5,15 +5,18 @@
  */
 package syntaxtree;
 
+
+
 /**
  *
  * @author jefferson.lessa
  */
-public class Terminal extends NodeP implements Node{
-    
-    public Terminal(String value){
+public class Terminal extends NodeP implements Node {
+
+    public Terminal(String value) {
         this.filhos = null;
-        this.value = value;
+        this.valor = value;
     }
-                    
+
+
 }

@@ -12,17 +12,23 @@ import java.util.List;
  *
  * @author Jefferson
  */
-public class VarDeclList implements Node{
+public class VarDeclList extends NodeP implements Node{
     private List<VarDecl> variables;
 
     public VarDeclList() {
         variables = new ArrayList<>();
+        filhos = new ArrayList<>();               
     }
+    
 
     public void add(VarDecl v) {
         variables.add(v);
     }
-
+    
+    public void addFilho(VarDecl v) {
+        this.filhos.add(v);
+    }
+    
     public VarDecl get(int i) {
         return variables.get(i);
     }

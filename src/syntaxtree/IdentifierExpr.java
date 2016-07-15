@@ -5,20 +5,25 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author Jefferson
  */
-public class IdentifierExpr   implements Expression {
+public class IdentifierExpr extends NodeP implements Expression {
+
     private Identifier id;
 
     public IdentifierExpr(Identifier id) {
         this.id = id;
+        filhos = new ArrayList<>();
+        filhos.add(id);
     }
 
     public Identifier getId() {
         return id;
     }
 
-   
 }

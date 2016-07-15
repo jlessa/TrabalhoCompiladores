@@ -7,24 +7,25 @@ package syntaxtree;
 
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  *
  * @author Jefferson
  */
-public class MethodDeclList implements Node {
+public class MethodDeclList extends NodeP implements Node {
 
     private List<MethodDecl> methods;
 
     public MethodDeclList() {
         this.methods = new ArrayList<>();
-     
+        filhos = new ArrayList<>();
     }
 
     public void add(MethodDecl m) {
         this.methods.add(m);
     }
-
+    public void addFilho(MethodDecl m) {
+        this.filhos.add(m);
+    }
     public MethodDecl get(int i) {
         return this.methods.get(i);
     }

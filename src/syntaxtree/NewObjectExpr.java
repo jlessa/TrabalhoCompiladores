@@ -5,21 +5,25 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
  */
-public class NewObjectExpr implements Expression {
+public class NewObjectExpr extends NodeP implements Expression {
+
     public Identifier id;
 
     public NewObjectExpr(Identifier id) {
         this.id = id;
+        filhos = new ArrayList<>();
+        filhos.add(this.id);
     }
+
 
     public Identifier getId() {
         return id;
     }
 
-    
-    
 }

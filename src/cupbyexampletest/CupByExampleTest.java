@@ -5,24 +5,14 @@
  */
 package cupbyexampletest;
 
-import printer.NodeTree;
+import parser.Parser;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StringReader;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java_cup.runtime.Scanner;
 import java_cup.runtime.Symbol;
-import java_cup.runtime.XMLElement;
-import sun.reflect.generics.tree.Tree;
-import syntaxtree.*;
 import printer.BTreePrinter;
-import printer.NodeTree;
-
+import syntaxtree.*;
 
 /**
  *
@@ -33,27 +23,24 @@ public class CupByExampleTest {
     /**
      * @param args the command line arguments
      */
-    public static final Path LEXER_PATH = Paths.get(".\\src\\cupbyexampletest\\lexer.lex");
-    public static final Path PARSER_PATH = Paths.get(".\\src\\cupbyexampletest\\cup.cup");
-    public static final Path TEST_FILES_DIR = Paths.get(".\\src\\cupbyexampletest\\in.java");
-    
-    
-           
-    public static void main(String[] args) throws Exception {
+    public static final Path LEXER_PATH = Paths.get(".\\src\\lexer\\lexer.lex");
+    public static final Path PARSER_PATH = Paths.get(".\\src\\parser\\cup.cup");
+    public static final Path TEST_FILES_DIR = Paths.get(".\\src\\testFiles\\in.java");
 
-        Symbol symbol;
-        
-        
+    public static void main(String[] args) throws Exception {        
+
         //gerarLexer(LEXER_PATH);
         //gerarParser(PARSER_PATH,PARSER_PATH.getParent(),"Parser","sym",0);
-        
-        Parser p = new Parser(TEST_FILES_DIR);               
-        
-        //Árvore na memória
-        Node node = (Node)p.parse().value;
-        
-        //BTreePrinter.printNode(node);
+        Parser p = new Parser(TEST_FILES_DIR);
 
+        //Árvore na memória
+        Node node = (Node) p.parse().value;
+                        
+        //JSONSerializer serializer = new JSONSerializer();
+        //String json = serializer.exclude("filhos").serialize( (NodeP) node );
+        
+        //Print da árvore
+        BTreePrinter.printNode((NodeP) node);
     }
 
     public static void gerarLexer(Path path) {
@@ -71,5 +58,5 @@ public class CupByExampleTest {
             e.printStackTrace();
         }
     }
-    
+
 }

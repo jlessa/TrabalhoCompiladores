@@ -12,20 +12,22 @@ import java.util.List;
  *
  * @author Jefferson
  */
-public class ArgumentList extends NodeP implements Node{
+public class ArgumentList extends NodeP implements Node {
 
     private List<Argument> arguments;
 
     public ArgumentList() {
-        this.arguments = new ArrayList<>();        
+        this.arguments = new ArrayList<>();
         filhos = new ArrayList<>();
-        for(Argument ag : this.arguments){
-            filhos.add(ag);
-        }
+
     }
 
     public void add(Argument a) {
         this.arguments.add(a);
+    }
+
+    public void addFilho(Argument a) {
+        this.filhos.add(a);
     }
 
     public Argument get(int i) {
@@ -34,6 +36,7 @@ public class ArgumentList extends NodeP implements Node{
 
     public int size() {
         return this.arguments.size();
-    }    
+    }
+
 
 }

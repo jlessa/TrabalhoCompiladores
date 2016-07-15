@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Jefferson
  */
-public class AssignStmt   extends NodeP implements  Statement {
+public class AssignStmt extends NodeP implements Statement {
 
     private Identifier id;
     private Expression assign;
@@ -19,10 +19,11 @@ public class AssignStmt   extends NodeP implements  Statement {
     public AssignStmt(Identifier id, Expression assign) {
         this.id = id;
         this.assign = assign;
-        filhos = new ArrayList<>();        
-        filhos.add(this.id);        
+        filhos = new ArrayList<>();
+        filhos.add(this.id);
         filhos.add(this.assign);
     }
+
 
     public Identifier getId() {
         return id;
@@ -31,5 +32,5 @@ public class AssignStmt   extends NodeP implements  Statement {
     public Expression getAssign() {
         return assign;
     }
-    
+
 }

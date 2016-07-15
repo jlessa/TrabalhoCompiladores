@@ -5,11 +5,14 @@
  */
 package syntaxtree;
 
+
+
 /**
  *
  * @author Jefferson
  */
 public class ClassDecl extends NodeP implements Node {
+
 
 
     

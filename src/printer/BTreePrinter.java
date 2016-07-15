@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 import sun.misc.Queue;
 import syntaxtree.Node;
+import syntaxtree.NodeP;
 
 /**
  *
@@ -17,29 +18,25 @@ import syntaxtree.Node;
  */
 public class BTreePrinter {
 
-    public static void printNode(Node root) throws InterruptedException {
-        NodeTree node = convertObjecToNode(root);
-        printNodeLargura(node, new Queue<NodeTree>());
+    public static int nivel = 0;
+
+    public static void printNode(NodeP root) throws InterruptedException {
+        pulaLinha();
+        printNodeProf(root, new Queue<NodeP>(), BTreePrinter.nivel);
     }
 
-    private static NodeTree convertObjecToNode(Node root) {
-        //faltou somente implementar a conversão para printar a árvore na tela
-        return new NodeTree();
-    }
-
-    private static void printNodeLargura(NodeTree node, Queue<NodeTree> nodes) throws InterruptedException {
+    private static void printNodeProf(NodeP node, Queue<NodeP> nodesQueue, int nivel) throws InterruptedException {
         if (!node.visitado) {
-            visitaNo(node);
-            System.out.println("");
+            visitaNo(node, nivel);
+            pulaLinha();
+            nivel++;
         }
-        
-        if (nodes != null) {
-            for(NodeTree n : node.filhos){
-                nodes.enqueue(n);
-            }            
+        if (node.filhos != null && node.filhos.size() > 0) {
+            for (Node f : node.filhos) {
+                printNodeProf((NodeP) f, nodesQueue, nivel);
+            }
         }
-        printNodeLargura(nodes.dequeue(),nodes);
-        
+
     }
 
     private static void printWhitespaces(int count) {
@@ -48,9 +45,16 @@ public class BTreePrinter {
         }
     }
 
-    private static void visitaNo(NodeTree no) {
-        System.out.print(no.valor.toString());
+    private static void visitaNo(NodeP no, int nivel) {
+        for (int i = 0; i < nivel; i++) {
+            System.out.print("\t\t");
+        }
+        System.out.print(no.valor);
         no.visitado = true;
+    }
+
+    private static void pulaLinha() {
+        System.out.println();
     }
 
     private static <T> boolean isAllElementsNull(List<T> list) {

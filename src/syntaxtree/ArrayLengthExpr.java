@@ -12,16 +12,19 @@ import java.util.ArrayList;
  * @author Jefferson
  */
 public class ArrayLengthExpr extends NodeP implements Expression {
+
     private Expression array;
 
     public ArrayLengthExpr(Expression array) {
         this.array = array;
-        filhos = new ArrayList<>();        
-        filhos.add(this.array);               
+        filhos = new ArrayList<>();
+        filhos.add(this.array);
     }
+
+
 
     public Expression getArray() {
         return array;
-    }    
-    
+    }
+
 }

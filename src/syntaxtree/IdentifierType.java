@@ -5,20 +5,27 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author Jefferson
  */
-public class IdentifierType   implements  Type {
+public class IdentifierType extends NodeP implements Type {
 
     private Identifier id;
 
     public IdentifierType(Identifier id) {
         this.id = id;
+        filhos = new ArrayList<>();
+        filhos.add(id);
+
     }
+
 
     public Identifier getId() {
         return id;
     }
-    
+
 }

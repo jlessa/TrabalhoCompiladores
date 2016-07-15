@@ -5,11 +5,16 @@
  */
 package syntaxtree;
 
+
 /**
  *
  * @author Jefferson
  */
-public class ThisExpr implements Expression{
+public class ThisExpr extends NodeP implements Expression {
 
-    
+    public ThisExpr() {
+        filhos = null;
+        valor = "this";
+    }
+
 }

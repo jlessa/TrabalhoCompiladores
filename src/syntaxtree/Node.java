@@ -7,10 +7,10 @@ package syntaxtree;
 
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  *
  * @author Jefferson
  */
-public interface Node {                
+public interface Node {    
+
 }

@@ -11,7 +11,8 @@ import java.util.ArrayList;
  *
  * @author Jefferson
  */
-public class BinaryBooleanExpr  extends NodeP implements Expression {
+public class BinaryBooleanExpr extends NodeP implements Expression {
+
     private Expression expr1;
     private Expression expr2;
     private BinaryBooleanOperation op;
@@ -20,12 +21,14 @@ public class BinaryBooleanExpr  extends NodeP implements Expression {
         this.expr1 = expr1;
         this.expr2 = expr2;
         this.op = op;
-        
-        filhos = new ArrayList<>();        
+
+        filhos = new ArrayList<>();
         filhos.add(this.expr1);
         filhos.add(this.expr2);
         filhos.add(new Terminal(op.toString()));
-    }    
+    }
+
+
 
     public enum BinaryBooleanOperation {
         AND, OR, EQUALS, DIFF, LESS, LESS_THAN, GREATER, GREATER_THAN
@@ -42,5 +45,5 @@ public class BinaryBooleanExpr  extends NodeP implements Expression {
     public BinaryBooleanOperation getOp() {
         return op;
     }
-    
+
 }

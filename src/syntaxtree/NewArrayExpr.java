@@ -5,20 +5,27 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author Jefferson
  */
-public class NewArrayExpr implements Expression {
+public class NewArrayExpr extends NodeP implements Expression {
+
     private Expression expr;
 
     public NewArrayExpr(Expression expr) {
         this.expr = expr;
+        filhos = new ArrayList<>();
+        filhos.add(this.expr);
     }
+
+
 
     public Expression getExpr() {
         return expr;
-    }   
+    }
 
-    
 }

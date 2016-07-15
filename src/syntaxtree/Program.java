@@ -16,14 +16,16 @@ public class Program extends NodeP implements Node {
     private MainClassDecl mainClass;
     private ClassDeclList classOpt;
 
-    public Program(MainClassDecl mainClass, ClassDeclList classOpt) {        
+    public Program(MainClassDecl mainClass, ClassDeclList classOpt) {
         this.mainClass = mainClass;
-        this.classOpt = classOpt; 
+        this.classOpt = classOpt;
         filhos = new ArrayList<>();
-        filhos.add(mainClass);
-        filhos.add(classOpt);
-        
+        filhos.add(this.mainClass);
+        filhos.add(this.classOpt);
+
     }
+
+
 
     public MainClassDecl getMainClass() {
         return mainClass;
@@ -40,6 +42,5 @@ public class Program extends NodeP implements Node {
     public void setClassOpt(ClassDeclList classOpt) {
         this.classOpt = classOpt;
     }
-    
 
 }

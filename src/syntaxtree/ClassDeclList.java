@@ -8,6 +8,7 @@ package syntaxtree;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  *
  * @author Jefferson
@@ -18,17 +19,17 @@ public class ClassDeclList extends NodeP implements Node {
 
     public ClassDeclList() {
         this.classes = new ArrayList<>();
-        filhos = new ArrayList<>();
-        for(ClassDecl cd : classes){
-            filhos.add(cd);
-        }
-        
+        this.filhos =  new ArrayList<>();        
     }
 
     public void add(ClassDecl c) {
         this.classes.add(c);
     }
-
+    
+    public void addFilho(ClassDecl c){
+        this.filhos.add(c);
+    }
+    
     public ClassDecl get(int i) {
         return this.classes.get(i);
     }
@@ -36,5 +37,6 @@ public class ClassDeclList extends NodeP implements Node {
     public int size() {
         return this.classes.size();
     }
+    
 
 }

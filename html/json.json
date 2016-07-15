@@ -1,0 +1,32 @@
+{
+   "class":"syntaxtree.Program",
+   "classOpt":{
+      "class":"syntaxtree.ClassDeclList",
+      "valor":"ClassDeclList",
+      "visitado":false
+   },
+   "mainClass":{
+      "args":{
+         "class":"syntaxtree.Identifier",
+         "name":"a",
+         "valor":"a",
+         "visitado":false
+      },
+      "class":"syntaxtree.MainClassDecl",
+      "main":{
+         "class":"syntaxtree.StatementList",
+         "valor":"StatementList",
+         "visitado":false
+      },
+      "mainClassName":{
+         "class":"syntaxtree.Identifier",
+         "name":"Factorial",
+         "valor":"Factorial",
+         "visitado":false
+      },
+      "valor":"MainClassDecl",
+      "visitado":false
+   },
+   "valor":"Program",
+   "visitado":false
+}

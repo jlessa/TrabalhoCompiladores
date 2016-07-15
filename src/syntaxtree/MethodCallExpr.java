@@ -5,11 +5,15 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author Jefferson
  */
-public class MethodCallExpr implements Expression {
+public class MethodCallExpr extends NodeP implements Expression {
+
     private Expression object;
     private Identifier method;
     private ExpressionList params;
@@ -18,8 +22,13 @@ public class MethodCallExpr implements Expression {
         this.object = object;
         this.method = method;
         this.params = params;
-       
+        filhos = new ArrayList<>();
+        filhos.add(this.object);
+        filhos.add(this.method);
+        filhos.add(this.params);
+
     }
+
 
     public Expression getObject() {
         return object;
@@ -33,6 +42,4 @@ public class MethodCallExpr implements Expression {
         return params;
     }
 
-    
-    
 }

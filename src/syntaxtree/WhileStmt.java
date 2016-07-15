@@ -5,18 +5,25 @@
  */
 package syntaxtree;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jefferson
  */
-public class WhileStmt implements Statement {
+public class WhileStmt extends NodeP implements Statement {
+
     private Expression expr;
     private Statement stmt;
 
     public WhileStmt(Expression expr, Statement stmt) {
         this.expr = expr;
-        this.stmt = stmt;        
+        this.stmt = stmt;
+        filhos = new ArrayList<>();
+        filhos.add(this.expr);
+        filhos.add(this.stmt);
     }
+
 
     public Expression getExpr() {
         return expr;
@@ -24,6 +31,6 @@ public class WhileStmt implements Statement {
 
     public Statement getStmt() {
         return stmt;
-    }  
-    
+    }
+
 }

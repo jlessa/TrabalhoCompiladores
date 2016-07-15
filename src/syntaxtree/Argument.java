@@ -23,7 +23,7 @@ public class Argument extends NodeP implements Node {
         filhos.add(this.type);
         filhos.add(this.name);
     }
-
+    
     public Type getType() {
         return type;
     }
