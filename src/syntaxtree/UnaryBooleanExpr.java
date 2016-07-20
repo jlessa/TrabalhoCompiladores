@@ -6,6 +6,7 @@
 package syntaxtree;
 
 import java.util.ArrayList;
+import syntaxtree.Terminal.Terminais;
 
 /**
  *
@@ -21,7 +22,7 @@ public class UnaryBooleanExpr extends NodeP implements Expression {
         this.op = op;
         filhos = new ArrayList<>();
         filhos.add(expr);
-        filhos.add(new Terminal(op.toString()));
+        filhos.add(new Terminal(Terminais.OPP));
     }
 
 

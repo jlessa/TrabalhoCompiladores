@@ -6,6 +6,7 @@
 package syntaxtree;
 
 import java.util.ArrayList;
+import syntaxtree.Terminal.Terminais;
 
 
 /**
@@ -19,7 +20,11 @@ public class NewArrayExpr extends NodeP implements Expression {
     public NewArrayExpr(Expression expr) {
         this.expr = expr;
         filhos = new ArrayList<>();
+        filhos.add(new Terminal(Terminais.NEW));
+        filhos.add(new Terminal(Terminais.INT));
+        filhos.add(new Terminal(Terminais.O_BRACK));        
         filhos.add(this.expr);
+        filhos.add(new Terminal(Terminais.C_BRACK));
     }
 
 

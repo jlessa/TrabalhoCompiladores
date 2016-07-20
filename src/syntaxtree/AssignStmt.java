@@ -21,7 +21,9 @@ public class AssignStmt extends NodeP implements Statement {
         this.assign = assign;
         filhos = new ArrayList<>();
         filhos.add(this.id);
+        filhos.add(new Terminal(Terminal.Terminais.ASSIGN));
         filhos.add(this.assign);
+        filhos.add(new Terminal(Terminal.Terminais.SEMICOLON));
     }
 
 

@@ -20,7 +20,10 @@ public class WhileStmt extends NodeP implements Statement {
         this.expr = expr;
         this.stmt = stmt;
         filhos = new ArrayList<>();
+        filhos.add(new Terminal(Terminal.Terminais.WHILE));
+        filhos.add(new Terminal(Terminal.Terminais.O_PAR));
         filhos.add(this.expr);
+        filhos.add(new Terminal(Terminal.Terminais.C_PAR));
         filhos.add(this.stmt);
     }
 

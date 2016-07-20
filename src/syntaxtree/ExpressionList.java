@@ -7,6 +7,7 @@ package syntaxtree;
 
 import java.util.ArrayList;
 import java.util.List;
+import syntaxtree.Terminal.Terminais;
 
 
 /**
@@ -30,6 +31,10 @@ public class ExpressionList extends NodeP implements Node {
     }
 
     public void addFilho(Expression e) {
+        if(this.filhos != null && this.filhos.size() > 0){
+            this.filhos.add(new Terminal(Terminais.COMMA));
+        }
+        
         this.filhos.add(e);
     }
 

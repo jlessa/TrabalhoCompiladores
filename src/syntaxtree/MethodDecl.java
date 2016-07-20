@@ -6,7 +6,7 @@
 package syntaxtree;
 
 import java.util.ArrayList;
-
+import syntaxtree.Terminal.Terminais;
 
 /**
  *
@@ -29,14 +29,20 @@ public class MethodDecl extends NodeP implements Node {
         this.statements = statements;
         this.returnExpr = returnExpr;
         filhos = new ArrayList<>();
-        filhos.add(this.name);
+        filhos.add(new Terminal(Terminais.PUBLIC));
         filhos.add(this.returnType);
+        filhos.add(this.name);
+        filhos.add(new Terminal(Terminais.O_PAR));
         filhos.add(this.arguments);
+        filhos.add(new Terminal(Terminais.C_PAR));
+        filhos.add(new Terminal(Terminais.O_BRAC));
         filhos.add(this.variables);
         filhos.add(this.statements);
         filhos.add(this.returnExpr);
+        filhos.add(new Terminal(Terminais.RETURN));
+        filhos.add(new Terminal(Terminais.SEMICOLON));
+        filhos.add(new Terminal(Terminais.C_BRAC));
     }
-
 
     public Type getReturnType() {
         return returnType;

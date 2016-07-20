@@ -7,7 +7,6 @@ package syntaxtree;
 
 import java.util.ArrayList;
 
-
 /**
  *
  * @author Jefferson
@@ -23,10 +22,10 @@ public class ArrayLookupExpr extends NodeP implements Expression {
 
         filhos = new ArrayList<>();
         filhos.add(this.array);
+        filhos.add(new Terminal(Terminal.Terminais.O_PAR));
         filhos.add(this.index);
-
+        filhos.add(new Terminal(Terminal.Terminais.C_PAR));
     }
-
 
     public Expression getArray() {
         return array;

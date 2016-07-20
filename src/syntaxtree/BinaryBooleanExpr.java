@@ -25,13 +25,34 @@ public class BinaryBooleanExpr extends NodeP implements Expression {
         filhos = new ArrayList<>();
         filhos.add(this.expr1);
         filhos.add(this.expr2);
-        filhos.add(new Terminal(op.toString()));
+        filhos.add(new Terminal(escolheTerminal(op.toString())));
     }
-
-
 
     public enum BinaryBooleanOperation {
         AND, OR, EQUALS, DIFF, LESS, LESS_THAN, GREATER, GREATER_THAN
+    }
+
+    private String escolheTerminal(String op) {
+        switch (op) {
+            case "AND":
+                return Terminal.Terminais.AND;
+            case "OR":
+                return Terminal.Terminais.OR;
+            case "EQUALS":
+                return Terminal.Terminais.EQUALS;
+            case "DIFF":
+                return Terminal.Terminais.DIFF;
+            case "LESS":
+                return Terminal.Terminais.LESS;
+            case "LESS_THAN":
+                return Terminal.Terminais.LESS_EQ;
+            case "GREATER":
+                return Terminal.Terminais.GREATER;
+            case "GREATER_THAN":
+                return Terminal.Terminais.GREATER_EQ;
+            default:
+                return "";
+        }
     }
 
     public Expression getExpr1() {

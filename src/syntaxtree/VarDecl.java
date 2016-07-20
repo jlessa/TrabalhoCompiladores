@@ -6,6 +6,7 @@
 package syntaxtree;
 
 import java.util.ArrayList;
+import syntaxtree.Terminal.Terminais;
 
 /**
  *
@@ -22,6 +23,7 @@ public class VarDecl extends NodeP implements Node {
         filhos = new ArrayList<>();
         filhos.add(this.type);
         filhos.add(this.id);
+        filhos.add(new Terminal(Terminais.SEMICOLON));
 
     }
 

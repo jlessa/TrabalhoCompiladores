@@ -6,6 +6,7 @@
 package syntaxtree;
 
 import java.util.ArrayList;
+import syntaxtree.Terminal.Terminais;
 
 /**
  *
@@ -22,9 +23,12 @@ public class SimpleClassDecl extends ClassDecl{
         this.attributes = attributes;
         this.methods = methods;
         this.filhos = new ArrayList<>();
+        filhos.add(new Terminal(Terminal.Terminais.CLASS));
         filhos.add(this.className);
+        filhos.add(new Terminal(Terminais.O_BRAC));
         filhos.add(this.attributes);
         filhos.add(this.methods);
+        filhos.add(new Terminal(Terminais.C_BRAC));
         
     }
 

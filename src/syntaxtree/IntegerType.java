@@ -5,6 +5,8 @@
  */
 package syntaxtree;
 
+import syntaxtree.Terminal.Terminais;
+
 
 /**
  *
@@ -14,7 +16,7 @@ public class IntegerType extends NodeP implements Type {
 
     public IntegerType() {
         this.filhos = null;
-        this.valor = "int";
+        this.valor = Terminais.INT;
     }
 
 }

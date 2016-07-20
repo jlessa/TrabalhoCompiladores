@@ -19,6 +19,8 @@ public class ArrayLengthExpr extends NodeP implements Expression {
         this.array = array;
         filhos = new ArrayList<>();
         filhos.add(this.array);
+        filhos.add(new Terminal(Terminal.Terminais.DOT));
+        filhos.add(new Terminal(Terminal.Terminais.LENGTH));
     }
 
 

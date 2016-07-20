@@ -5,6 +5,8 @@
  */
 package syntaxtree;
 
+import syntaxtree.Terminal.Terminais;
+
 
 /**
  *
@@ -14,7 +16,7 @@ public class ThisExpr extends NodeP implements Expression {
 
     public ThisExpr() {
         filhos = null;
-        valor = "this";
+        valor = Terminais.THIS;
     }
 
 }

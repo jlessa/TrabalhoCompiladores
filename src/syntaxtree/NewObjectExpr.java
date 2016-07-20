@@ -18,7 +18,10 @@ public class NewObjectExpr extends NodeP implements Expression {
     public NewObjectExpr(Identifier id) {
         this.id = id;
         filhos = new ArrayList<>();
+        filhos.add(new Terminal(Terminal.Terminais.NEW));
         filhos.add(this.id);
+        filhos.add(new Terminal(Terminal.Terminais.O_PAR));
+        filhos.add(new Terminal(Terminal.Terminais.C_PAR));
     }
 
 

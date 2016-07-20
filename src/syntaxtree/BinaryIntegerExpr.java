@@ -6,7 +6,7 @@
 package syntaxtree;
 
 import java.util.ArrayList;
-
+import syntaxtree.Terminal.Terminais;
 
 /**
  *
@@ -25,13 +25,28 @@ public class BinaryIntegerExpr extends NodeP implements Expression {
         filhos = new ArrayList<>();
         filhos.add(expr1);
         filhos.add(expr2);
-        filhos.add(new Terminal(this.op.toString()));
+        filhos.add(new Terminal(escolheTerminal(this.op.toString())));
     }
-
-
 
     public enum BinaryIntegerOperation {
         PLUS, MINUS, MUL, DIV, MOD
+    }
+
+    private String escolheTerminal(String op) {
+        switch (op) {
+            case "PLUS":
+                return Terminais.PLUS;
+            case "MINUS":
+                return Terminais.MINUS;
+            case "MUL":
+                return Terminais.MULT;
+            case "MOD":
+                return Terminais.PERCENT;
+            case "DIV":
+                return Terminais.DIV;
+            default:
+                return "";
+        }
     }
 
     public Expression getExpr1() {

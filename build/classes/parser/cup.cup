@@ -198,7 +198,7 @@ expr        ::= expr:l OR expr:r                                        {:RESULT
                 | THIS                                                  {:RESULT = new ThisExpr();:}
                 | NEW INT O_BRACK expr:len C_BRACK                      {:RESULT = new NewArrayExpr(len);:}
                 | NEW id:type O_PAR C_PAR                               {:RESULT = new NewObjectExpr(type);:}
-                | O_PAR expr:expr C_PAR                                 {:RESULT = expr;:}
+                | O_PAR expr:expr C_PAR                                 {:RESULT = new ParExpr(expr);:}
                 | expr:e INTEGER:i                                      {:if(i < 0) RESULT = new BinaryIntegerExpr(e, new IntegerLiteralExpr(-i), BinaryIntegerExpr.BinaryIntegerOperation.MINUS);
                                                                                   else throw new UnsupportedOperationException();:}
             ;

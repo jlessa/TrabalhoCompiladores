@@ -6,6 +6,7 @@
 package syntaxtree;
 
 import java.util.ArrayList;
+import syntaxtree.Terminal.Terminais;
 
 
 /**
@@ -23,8 +24,12 @@ public class IfStmt extends NodeP implements Statement {
         this.ifStmt = ifStmt;
         this.elseStmt = elseStmt;
         filhos = new ArrayList<>();
+        filhos.add(new Terminal(Terminais.IF));
+        filhos.add(new Terminal(Terminais.O_PAR));
         filhos.add(this.expr);
+        filhos.add(new Terminal(Terminais.C_PAR));
         filhos.add(this.ifStmt);
+        filhos.add(new Terminal(Terminais.ELSE));
         filhos.add(this.elseStmt);
     }
 
@@ -32,7 +37,10 @@ public class IfStmt extends NodeP implements Statement {
         this.expr = expr;
         this.ifStmt = ifStmt;
         filhos = new ArrayList<>();
+        filhos.add(new Terminal(Terminais.IF));
+        filhos.add(new Terminal(Terminais.O_PAR));
         filhos.add(this.expr);
+        filhos.add(new Terminal(Terminais.C_PAR));
         filhos.add(this.ifStmt);
     }
 

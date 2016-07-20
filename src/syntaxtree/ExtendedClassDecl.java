@@ -6,6 +6,7 @@
 package syntaxtree;
 
 import java.util.ArrayList;
+import syntaxtree.Terminal.Terminais;
 
 /**
  *
@@ -18,12 +19,14 @@ public class ExtendedClassDecl extends SimpleClassDecl{
         super(className, attributes, methods);
         this.extendsClassName = extendsClassName;
         this.filhos = new ArrayList<>();
+        filhos.add(new Terminal(Terminais.CLASS));
         filhos.add(super.getClassName());
-        filhos.add(new Terminal("extends"));
+        filhos.add(new Terminal(Terminais.EXTENDS));
         filhos.add(this.extendsClassName);
+        filhos.add(new Terminal(Terminais.O_BRAC));
         filhos.add(super.getAttributes());
         filhos.add(super.getMethods());
-        
+        filhos.add(new Terminal(Terminais.C_BRAC));        
     }
 
     public Identifier getExtendsClassName() {

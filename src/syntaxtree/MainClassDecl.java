@@ -6,6 +6,7 @@
 package syntaxtree;
 
 import java.util.ArrayList;
+import syntaxtree.Terminal.Terminais;
 
 /**
  *
@@ -21,9 +22,22 @@ public class MainClassDecl extends NodeP implements Node {
         this.argsName = argsName;
         this.cmd = cmd;  
         filhos = new ArrayList<>();
+        filhos.add(new Terminal(Terminais.CLASS));
         filhos.add(mainClassName);
+        filhos.add(new Terminal(Terminais.O_BRAC));
+        filhos.add(new Terminal(Terminais.PUBLIC));
+        filhos.add(new Terminal(Terminais.STATIC));
+        filhos.add(new Terminal(Terminais.VOID));
+        filhos.add(new Terminal(Terminais.MAIN));
+        filhos.add(new Terminal(Terminais.O_PAR));
+        filhos.add(new Terminal(Terminais.STRING));
+        filhos.add(new Terminal(Terminais.O_BRACK));
+        filhos.add(new Terminal(Terminais.C_BRACK));
         filhos.add(argsName);
+        filhos.add(new Terminal(Terminais.C_PAR));
         filhos.add(cmd);
+        filhos.add(new Terminal(Terminais.C_BRAC));
+        filhos.add(new Terminal(Terminais.C_BRAC));
     }
 
     public Identifier getMainClassName() {

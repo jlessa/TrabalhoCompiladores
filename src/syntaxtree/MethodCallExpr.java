@@ -24,9 +24,11 @@ public class MethodCallExpr extends NodeP implements Expression {
         this.params = params;
         filhos = new ArrayList<>();
         filhos.add(this.object);
+        filhos.add(new Terminal(Terminal.Terminais.DOT));
         filhos.add(this.method);
+        filhos.add(new Terminal(Terminal.Terminais.O_PAR));
         filhos.add(this.params);
-
+        filhos.add(new Terminal(Terminal.Terminais.C_PAR));
     }
 
 

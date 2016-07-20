@@ -18,7 +18,11 @@ public class PrintStmt extends NodeP implements Statement {
     public PrintStmt(Expression expr) {
         this.expr = expr;
         filhos = new ArrayList<>();
+        filhos.add(new Terminal(Terminal.Terminais.PRINTLN));
+        filhos.add(new Terminal(Terminal.Terminais.O_PAR));
         filhos.add(this.expr);
+        filhos.add(new Terminal(Terminal.Terminais.C_PAR));
+        filhos.add(new Terminal(Terminal.Terminais.SEMICOLON));
     }
 
 

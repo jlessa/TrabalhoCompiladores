@@ -5,6 +5,8 @@
  */
 package syntaxtree;
 
+import syntaxtree.Terminal.Terminais;
+
 
 
 /**
@@ -13,5 +15,10 @@ package syntaxtree;
  */
 public class IntArrayType extends NodeP implements Type {
 
+    public IntArrayType() {
+        this.filhos=null;
+        this.valor = Terminais.INT + Terminais.O_BRACK + Terminais.C_BRACK;
+    }
+    
 
 }

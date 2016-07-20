@@ -5,13 +5,19 @@
  */
 package syntaxtree;
 
+import syntaxtree.Terminal.Terminais;
+
 
 /**
  *
  * @author Jefferson
  */
-public class BooleanType   implements Type{    
+public class BooleanType extends NodeP  implements Type{    
 
-
+    public BooleanType(){
+        this.filhos = null;
+        this.valor = Terminais.BOOLEAN;
+    }
+    
 
 }

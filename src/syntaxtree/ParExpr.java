@@ -13,19 +13,15 @@ import syntaxtree.Terminal.Terminais;
  *
  * @author Jefferson
  */
-public class BooleanLiteralExpr extends NodeP implements Expression {
+public class ParExpr extends NodeP implements Expression {
+    
 
-    private boolean value;
-
-    public BooleanLiteralExpr(boolean value) {
-        this.value = value;
+    public ParExpr(Expression exp) {
+        
         filhos = new ArrayList<>();
-        filhos.add(new Terminal(value ? Terminais.TRUE : Terminais.FALSE));
-    }
-
-
-    public boolean isValue() {
-        return value;
+        filhos.add(new Terminal(Terminais.O_PAR));
+        filhos.add(exp);
+        filhos.add(new Terminal(Terminais.C_PAR));
     }
 
 }

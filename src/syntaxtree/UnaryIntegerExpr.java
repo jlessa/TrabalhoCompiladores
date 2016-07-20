@@ -21,12 +21,20 @@ public class UnaryIntegerExpr extends NodeP implements Expression {
         this.op = op;
         filhos = new ArrayList<>();
         filhos.add(this.expr);
-        filhos.add(new Terminal(op.toString()));
+        filhos.add(new Terminal(escolheTerminal(op.toString())));
     }
 
 
     public enum UnaryIntegerOperation {
         NEGATE
+    }
+    private String escolheTerminal(String op) {
+        switch (op) {
+            case "NEGATE":
+                return Terminal.Terminais.OPP;     
+            default:
+                return "";
+        }
     }
 
 }
