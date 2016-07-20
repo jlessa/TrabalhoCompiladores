@@ -1,0 +1,100 @@
+<!DOCTYPE>
+
+<html>
+
+	<head>
+		<title>AST Gerada</title>
+
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+		<script src="jquery-2.0.3.min.js"></script>
+		<script src="cytoscape.min.js"></script>
+
+		<!-- for testing with local version of cytoscape.js -->
+		<!--<script src="../cytoscape.js/build/cytoscape.js"></script>-->
+
+		<script src="dagre.min.js"></script>
+		<script src="cytoscape-dagre.js"></script>
+
+		<style>
+			body {
+				font-family: helvetica;
+				font-size: 14px;
+			}
+
+			#cy {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 999;
+			}
+
+			h1 {
+				opacity: 0.5;
+				font-size: 1em;
+			}
+		</style>
+
+		<script>
+			$(function(){
+
+				var cy = window.cy = cytoscape({
+					container: document.getElementById('cy'),
+
+          boxSelectionEnabled: false,
+          autounselectify: true,
+
+					layout: {
+						name: 'dagre'
+					},
+
+					style: [
+						{
+							selector: 'node',
+							style: {
+								'content': 'data(id)',
+								'text-opacity': 0.5,
+								'text-valign': 'center',
+								'text-halign': 'right',
+								'background-color': '#11479e'
+							}
+						},
+
+						{
+							selector: 'edge',
+							style: {
+								'width': 4,
+								'target-arrow-shape': 'triangle',
+								'line-color': '#9dbaea',
+								'target-arrow-color': '#9dbaea',
+								'curve-style': 'bezier'
+							}
+						}
+					],
+
+					elements: {
+						nodes: [
+							{ data: { id: 'Program' } },
+							{ data: { id: 'MainClassDecl' } },
+						],
+						edges: [
+							{ data: { source: 'Program', target: 'MainClassDecl' } },
+							{ data: { source: 'Program', target: 'ClassDeclList' } },	
+						]
+					},
+				});
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<h1>AST Gerada</h1>
+
+		<div id="cy"></div>
+
+	</body>
+
+</html>

@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java_cup.runtime.Symbol;
 import printer.BTreePrinter;
+import printer.BTreeHTML;
 import syntaxtree.*;
 
 /**
@@ -31,16 +32,18 @@ public class CupByExampleTest {
 
         //gerarLexer(LEXER_PATH);
         //gerarParser(PARSER_PATH,PARSER_PATH.getParent(),"Parser","sym",0);
-        Parser p = new Parser(TEST_FILES_DIR);
+        //Parser p = new Parser(TEST_FILES_DIR);
 
         //Árvore na memória
-        Node node = (Node) p.parse().value;
+        //Node node = (Node) p.parse().value;
                         
         //JSONSerializer serializer = new JSONSerializer();
         //String json = serializer.exclude("filhos").serialize( (NodeP) node );
         
         //Print da árvore
-        BTreePrinter.printNode((NodeP) node);
+        //BTreePrinter.printNode((NodeP) node);
+        BTreeHTML.escreveArquivo("");
+        
     }
 
     public static void gerarLexer(Path path) {
